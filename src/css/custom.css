@@ -6,25 +6,317 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #667eea;
+  --ifm-color-primary-dark: #5568d3;
+  --ifm-color-primary-darker: #4e5fc9;
+  --ifm-color-primary-darkest: #3d47a0;
+  --ifm-color-primary-light: #7a8fee;
+  --ifm-color-primary-lighter: #8a9eef;
+  --ifm-color-primary-lightest: #a9bdf5;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(102, 126, 234, 0.15);
+  --transition-speed: 0.3s;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #9fb3ff;
+  --ifm-color-primary-dark: #8fa3ff;
+  --ifm-color-primary-darker: #7f92ff;
+  --ifm-color-primary-darkest: #5f70d9;
+  --ifm-color-primary-light: #afbfff;
+  --ifm-color-primary-lighter: #bfccff;
+  --ifm-color-primary-lightest: #cfd9ff;
+  --docusaurus-highlighted-code-line-bg: rgba(159, 179, 255, 0.2);
+}
+
+/* Global Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Global Styles */
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+/* Button Animations */
+.button {
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.button--primary {
+  animation: slideInUp 0.5s ease-out;
+}
+
+.button--primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.button--secondary {
+  animation: slideInUp 0.5s ease-out;
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.button--secondary:hover {
+  background-color: #667eea;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+}
+
+/* Links */
+a {
+  transition: color var(--transition-speed) ease;
+}
+
+/* Cards and Sections */
+.card {
+  border-radius: 12px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.card:hover {
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  animation: slideInDown 0.6s ease-out;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+table th {
+  padding: 1rem;
+  font-weight: 600;
+  text-align: left;
+  animation: slideInDown 0.5s ease-out;
+}
+
+table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+table tbody tr:hover td {
+  background-color: rgba(102, 126, 234, 0.1);
+  transform: scale(1.01);
+}
+
+[data-theme='dark'] table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Images */
+img {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.6s ease-out;
+}
+
+img:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+/* Code Blocks */
+code {
+  animation: fadeIn 0.3s ease-out;
+}
+
+pre {
+  border-radius: 8px;
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Navbar */
+nav {
+  animation: slideInDown 0.5s ease-out;
+}
+
+/* Main Content Area */
+main {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Sidebar */
+aside {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+/* Footer */
+footer {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .button--secondary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: #667eea;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(102, 126, 234, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #667eea;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5568d3;
 }
