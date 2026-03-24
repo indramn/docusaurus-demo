@@ -1,7 +1,8 @@
 # About Vivin's Parents
 
 ## Chaitra
-<div class="parent-card">
+<div class="mother-card">
+  <video src="/videos/Video_1.mp4" autoplay muted loop></video>
   <h3>Mother: Chaitra</h3>
   <p><strong>Occupation:</strong> Teacher</p>
   <p><strong>Interests:</strong> Reading, traveling, and technology</p>
@@ -10,6 +11,7 @@
 
 ## Father
 <div class="father-card">
+  <video src="/videos/Video_2.mp4" autoplay muted loop></video>
   <h3>Father: Indresh</h3>
   <p><strong>Occupation:</strong> Software Engineer</p>
   <p><strong>Interests:</strong> Sports, music, and education</p>
