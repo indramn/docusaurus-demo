@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'indra',
-  tagline: 'Dinosaurs are cool',
+  title: 'Vivin first page',
+  tagline: 'Welcome to my page',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -75,29 +75,25 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'Vivin',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Vivin logo',
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/indramn/docusaurus-demo',
-          label: 'GitHub',
-          position: 'right',
-        },
+        /* {
+           type: 'docSidebar',
+           sidebarId: 'tutorialSidebar',
+           position: 'left',
+           label: 'Tutorial',
+         },*/
+        {to: '/docs/vivin-birth-details', label: 'Vivin', position: 'left'},
+
       ],
     },
     footer: {
       style: 'dark',
-      links: [
+      /*links: [
         {
           title: 'Docs',
           items: [
@@ -137,7 +133,7 @@ const config: Config = {
             },
           ],
         },
-      ],
+      ],*/
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
     prism: {
