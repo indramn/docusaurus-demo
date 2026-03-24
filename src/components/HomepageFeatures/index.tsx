@@ -11,29 +11,56 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'My Pictures:',
+    title: '📸 My Pictures',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Here you can file my beautiful pictures
+        A collection of my beautiful moments and memories captured throughout my growth journey. Each picture tells a story of joy and discovery!
       </>
     ),
   },
   {
-    title: 'My activities',
+    title: '🎯 My Activities & Interests',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        My activities  <code>docs</code> directory.
+        From playing and exploring to learning new words and skills. I love discovering new things about the world every single day!
       </>
     ),
   },
   {
-    title: 'My friends:',
+    title: '👨‍👩‍👧‍👦 My Family & Friends',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        My friends :)
+        The people who make my life special and full of love. I enjoy quality time with my family and making new friends!
+      </>
+    ),
+  },
+  {
+    title: '🎂 Personal Information',
+    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    description: (
+      <>
+        Born on March 4, 2022, in Bhadrvathi. Learn more about my birth details, milestones, and achievements on my About page.
+      </>
+    ),
+  },
+  {
+    title: '🏆 My Milestones',
+    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    description: (
+      <>
+        Recording my journey through important moments - first smile, first words, first steps, and many more wonderful achievements!
+      </>
+    ),
+  },
+  {
+    title: '🌍 Places I Visit',
+    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    description: (
+      <>
+        Exploring beautiful locations and creating memories with loved ones. From parks to family gathering spots, each place is special!
       </>
     ),
   },
